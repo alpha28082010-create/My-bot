@@ -1,0 +1,12 @@
+# Netscape HTTP Cookie File
+# https://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file! Do not edit.
+
+.youtube.com	TRUE	/	TRUE	1800871194	__Secure-YNID	20.YT=aj41jCviMDnKlt65JUOMC1fZQQAzsrScTl9s6VQyvLnkNk5ZYvxOQ7p94YKRHeI2h7bsDQBaPZe7cfeJxJ0ll0dF5E2MrtwOmQaiASdGN-q1yMUdjnH-D1w7WmoU1-Ma4mDF5QD-WqGLhdM9Th56YGRjsS9cYzfxe3U0OogYb2x03Uo4tdnglHpp9ofl1hSBQSFutASfwmWM83ccoBgm2IaF36kg2SxGXti88Fqkpx1TcsJJley8kIVj8EqqD3lmx7vr-uX_STDGY-1Rk5Pz8I05D9Jt2uVBZaT38_aKxLuGpEdhQc2bpHGzWNqfg3l0gIXa6Ur-EqamOJW6xN8meQ
+.youtube.com	TRUE	/	TRUE	1785320995	GPS	1
+.youtube.com	TRUE	/	TRUE	0	YSC	UhgyXCD6TPk
+.youtube.com	TRUE	/	TRUE	1800871705	VISITOR_INFO1_LIVE	3yi3VAEc7jw
+.youtube.com	TRUE	/	TRUE	1800871705	VISITOR_PRIVACY_METADATA	CgJVWhIEGgAgRA%3D%3D
+.youtube.com	TRUE	/	TRUE	1819879705	PREF	tz=Asia.Tashkent
+.mozilla.org	TRUE	/	FALSE	1819879704	_ga_B9CY1C9VBC	GS2.1.s1785319235$o1$g1$t1785319704$j60$l0$h0
+.mozilla.org	TRUE	/	FALSE	1819879704	_ga	GA1.1.761885812.1785319236
