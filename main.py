@@ -54,12 +54,26 @@ def quality_selected(call):
 
     is_audio = (quality == "audio")
 
+    # YouTube blokirovkasini aylanib o'tuvchi maxsus mweb/tv klient sozlamalari
+    common_opts = {
+        'extractor_args': {
+            'youtube': {
+                'player_client': ['mweb', 'tv'],
+                'skip': ['webpage', 'configs']
+            }
+        },
+        'nocheckcertificate': True,
+        'ignoreerrors': False,
+        'logtostderr': False,
+        'quiet': True,
+    }
+
     if is_audio:
         status_msg = bot.edit_message_text("⏳ Audio (MP3) yuklanmoqda...", chat_id, call.message.message_id)
         ydl_opts = {
+            **common_opts,
             'format': 'bestaudio/best',
             'outtmpl': f'downloads/{chat_id}_%(title)s.%(ext)s',
-            'extractor_args': {'youtube': {'player_client': ['android']}},  # YouTube blokirovkasidan o'tish
             'postprocessors': [{
                 'key': 'FFmpegExtractAudio',
                 'preferredcodec': 'mp3',
@@ -69,9 +83,9 @@ def quality_selected(call):
     else:
         status_msg = bot.edit_message_text(f"⏳ Video ({quality}p) yuklanmoqda...", chat_id, call.message.message_id)
         ydl_opts = {
-            'format': f'bestvideo[height<={quality}]+bestaudio/best[height<={quality}]',
+            **common_opts,
+            'format': f'bestvideo[height<={quality}]+bestaudio/best[height<={quality}]/best[height<={quality}]',
             'outtmpl': f'downloads/{chat_id}_%(title)s.%(ext)s',
-            'extractor_args': {'youtube': {'player_client': ['android']}},  # YouTube blokirovkasidan o'tish
             'merge_output_format': 'mp4',
         }
 
@@ -96,4 +110,5 @@ def quality_selected(call):
 
 if __name__ == '__main__':
     bot.infinity_polling()
+
 
