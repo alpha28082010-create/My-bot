@@ -59,6 +59,7 @@ def quality_selected(call):
         ydl_opts = {
             'format': 'bestaudio/best',
             'outtmpl': f'downloads/{chat_id}_%(title)s.%(ext)s',
+            'extractor_args': {'youtube': {'player_client': ['android']}},  # YouTube blokirovkasidan o'tish
             'postprocessors': [{
                 'key': 'FFmpegExtractAudio',
                 'preferredcodec': 'mp3',
@@ -70,6 +71,7 @@ def quality_selected(call):
         ydl_opts = {
             'format': f'bestvideo[height<={quality}]+bestaudio/best[height<={quality}]',
             'outtmpl': f'downloads/{chat_id}_%(title)s.%(ext)s',
+            'extractor_args': {'youtube': {'player_client': ['android']}},  # YouTube blokirovkasidan o'tish
             'merge_output_format': 'mp4',
         }
 
@@ -94,3 +96,4 @@ def quality_selected(call):
 
 if __name__ == '__main__':
     bot.infinity_polling()
+
